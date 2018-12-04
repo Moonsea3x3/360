@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>360安全浏览器</title>
+ <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+	<div class="fullpage">
+		<div class="page first">
+      <!-- logo -->
+      <div class="logo"></div>
+      <!-- 文字 -->
+      <div class="txt">
+        <img src="./images/text_1.png" alt="">
+        <img src="./images/text_2.png" alt="">
+        <img src="./images/text_3.png" alt="">
+        <img src="./images/text_4.png" alt="">
+        <img src="./images/text_5.png" alt="">
+        <img src="./images/text_6.png" alt="">
+        <img src="./images/text_7.png" alt="">
+        <img src="./images/text_8.png" alt="">
+      </div>
+      <!-- 其他信息 -->
+      <div class="info"></div>
+    </div>
+		<div class="page second">
+      <div class="shield">
+        <!-- 盾牌 -->
+        <img src="./images/shield_1.png" alt="">
+        <img src="./images/shield_2.png" alt="">
+        <img src="./images/shield_3.png" alt="">
+        <img src="./images/shield_4.png" alt="">
+        <img src="./images/shield_5.png" alt="">
+        <img src="./images/shield_6.png" alt="">
+        <img src="./images/shield_7.png" alt="">
+        <img src="./images/shield_8.png" alt="">
+        <img src="./images/shield_9.png" alt="">
+      </div>
+      <!-- 其他信息 -->
+      <div class="info"></div>
+    </div>
+		<div class="page third">
+      <!-- 其他信息 -->
+      <div class="info"></div>
+      <!-- 圆 -->
+      <div class="circle">
+      <!-- 火箭 -->
+      <div class="rocket"></div>
+      </div>
+    </div>
+		<div class="page forth">
+      <!-- 搜索栏 -->
+      <div class="column">
+        <!-- 输入栏 -->
+        <div class="search"></div>
+          <!-- 关键字 -->
+          <div class="key"></div>
+          <!-- 输出结果 -->
+          <div class="result">
+            <div class="img"></div>
+          </div>
+        
+      </div>
+
+      <div class="info"></div>
+    </div>
+		<div class="page five">
+      <div class="info"></div>
+      <div class="browser">
+        <!-- 背景 -->
+        <div class="bg"></div>
+        <!-- 工具栏 -->
+        <div class="swrap">
+        </div>
+        <div class="leftside border"></div>
+        <div class="topside border"></div>
+        <div class="rightside border"></div>
+        <div class="bottomside border"></div>
+      </div>
+    </div>
+	</div>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.fullPage.min.js"></script>
+	<script>
+	$('.fullpage').fullpage({
+    sectionSelector:'.page',
+    sectionsColor:['#0DA5D6','#2AB561',
+                  '#DE8910','#16BA9D','#0DA5D6'],
+      // 每切换屏一次调用一次                  
+    afterLoad:function(a,key,b){
+      //console.log(key);
+      // 3.清空所有屏的current类名
+      $('.page').removeClass('current');
+      //2. 当添加后并没有过渡效果 因浏览器没有渲染完 就被执行js 所以加上延时
+      setTimeout(function(){
+        //1. 给当前屏添加current类名
+      $('.page').eq(key-1).addClass('current');
+      },20);
+    }
+
+  })
+	
+	</script>
+</body>
+</html>

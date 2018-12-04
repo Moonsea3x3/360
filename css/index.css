@@ -1,0 +1,285 @@
+body,html{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.page{
+    overflow: hidden;
+}
+.first .logo{
+    width: 251px;
+    height: 186px;
+    background-image: url(../images/logo.png);
+    margin: 90px auto 100px;
+}
+.first  .txt{
+   text-align: center;
+}
+.first .txt img{
+    margin: 0 40px;
+    opacity: 0;
+    transition: all 1.5s;
+   
+}
+.first .info{
+    width: 772px;
+    height:49px;
+    background-image: url(../images/info_1.png);
+    margin: 50px auto;
+}
+/* 第一屏动画 */ 
+.first.current .txt img{
+  margin: 0 5px;
+  opacity: 1;
+}
+
+/* 第二屏动画 */
+.second .shield{
+  width: 515px;
+}
+
+.second .info{
+  width: 635px;
+  height: 309px;
+  background-image: url(../images/info_2.png);
+  margin-left: 50px;
+}
+
+/* fullpage插件会使page的类下 增加一个div盒子  使用伸缩盒子只能使用在父子关系 
+要定义page类下的div盒子 */
+
+.second > div{
+  display: flex;
+  align-items: center;
+  padding: 0 120px;
+}
+.second .shield img:nth-child(2){
+  transform: translate(500px,-100px) rotate(125deg);
+}
+.second .shield img:nth-child(3){
+  transform: translate(800px,100px) rotate(-25deg);
+}
+.second .shield img:nth-child(4){
+  transform: translate(720px,300px) rotate(150deg);
+}
+.second .shield img:nth-child(5){
+  transform: translate(920px,300px) rotate(65deg);
+}
+.second .shield img:nth-child(6){
+  transform: translate(530px,-100px) rotate(125deg);
+}
+.second .shield img:nth-child(7){
+  transform: translate(55px,-280px) rotate(125deg);
+}
+.second .shield img:nth-child(8){
+  transform: translate(1000px,-400px) rotate(60deg);
+}
+.second .shield img:last-child{
+  transform: translate(0px,-400px) rotate(60deg);
+}
+.second .shield img:first-child{
+  transform: translate(1100px,300px) rotate(60deg);
+}
+
+.second.current .shield img{
+  transform: translate(0,0) rotate(0deg);
+  transition: all 1.6s;
+}
+/* 第三屏 */
+.third > div {
+  display: flex;
+  padding: 0 120px;
+  align-items: center;
+}
+.third .info{
+  width: 631px;
+  height: 278px;
+  background-image: url(../images/info_3.png);
+}
+.third .circle{
+  width:453px ;
+  height: 449px;
+  background-image: url(../images/circle.png);
+  position: relative;
+  margin-left: 50px;
+
+}
+.third .rocket{
+  width: 203px;
+  height: 204px;
+  background-image: url(../images/rocket.png);
+  position: absolute;
+  bottom: -340px;
+  left: -470px;
+  opacity: 0.2;
+}
+.third.current .rocket{
+  transform: translate(580px,-455px);
+  transition: all 1.5s;
+  opacity: 1;
+}
+
+/* 第四屏 */
+.forth > div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 180px; 
+}
+
+.forth .info{
+  width:612px;
+  height: 299px;
+  background-image: url(../images/info_4.png);
+  
+}
+.column{
+  width: 530px;
+  height: 300px;
+  position: relative;
+  transform: translate(-140%);
+}
+
+.column .search{
+  width: 100%;
+  height: 54px;
+  background-image: url(../images/search.png);
+}
+.column .key{
+  width: 0px;
+  height: 22px;
+  background-image: url(../images/key.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 24px;
+  left: 20px;
+}
+.column .result{
+  width: 529px;
+  height: 372px;
+  overflow: hidden;
+}
+.column .result .img{
+  width: 100%;
+  height: 100%;
+  transform: translate(0,-100%);
+  background-image: url(../images/result.png);
+
+}
+
+/* 第四屏动画 */
+.forth.current .column{
+  transform: translate(0);
+  transition: all 1s;
+}
+
+
+.forth.current .key{
+  animation: keys 2s 1s steps(5) forwards;
+}
+.forth.current .img{
+  transform: translate(0,0);
+  transition: all 1s 3.5s;
+}
+/* 文字动画 */
+@keyframes keys{
+  from{
+    width: 0;
+  }
+  to{
+    width:99px; 
+  }
+}
+
+/* 第五屏 */
+.five{
+  position: relative;
+}
+.five .info{
+  width: 1077px;
+  height: 133px;
+  margin: auto;
+  background-image: url(../images/info_5.png);
+}
+.browser{
+  width: 1002px;
+  height: 545px;
+  position: absolute;
+  top: 170px;
+  left: 300px;
+}
+.browser .bg{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+  background: url(../images/toolbar.png) no-repeat,rgba(225,225,225,0.15) ;
+}
+.browser .swrap{
+  width: 0;
+  height: 27px;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.border{
+  position: absolute;
+  opacity: 0;
+}
+.topside{
+  width: 100%;
+  right: -100%;
+  top: 0; 
+  border-top: rgba(225,225,225,0.5) solid 1px;
+}
+.bottomside{
+  width: 100%;
+  right: 100%;
+  bottom: 0;
+  border-bottom: rgba(225,225,225,0.5) solid 1px;
+}
+.leftside{
+  height: 100%;
+  top: -100%;
+  left: 0;
+  border-left: rgba(225,225,225,0.5) solid 1px;
+}
+.rightside{
+  height: 100%;
+  top: 100%;
+  right: 0;
+  border-right: rgba(225,225,225,0.5) solid 1px;
+}
+.five.current .topside{
+  opacity: 1;
+  right: 0;
+  transition: all 1s 0.5s;
+}
+.five.current .leftside{
+  opacity: 1;
+  top: 0;
+  transition: all 1s 0.5s;
+}
+.five.current .rightside{
+  opacity: 1;
+  top: 0;
+  transition: all 1s 0.5s;
+}
+.five.current .bottomside{
+  opacity: 1;
+  right: 0;
+  transition: all 1s ;
+}
+.five.current .swrap{
+  width: 919px;
+  transition: all 1s 1.5s;
+  opacity: 0.5;
+}
+.five.current .bg{
+  opacity: 1;
+  transition: all 1s 2.8s;
+}
